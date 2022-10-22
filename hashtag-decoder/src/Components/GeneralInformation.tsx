@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import Bullet from './Bullet';
+import GlobeRender from './GlobeRender';
 
 const GeneralInformation: React.FC = () => {
 	return (
@@ -11,8 +12,8 @@ const GeneralInformation: React.FC = () => {
 				<Bullet title="Users" text="2.3K"/>
 				<Bullet title="Mentions" text="300"/>
 			</div>
-			<div className="w-full">
-				
+			<div className="w-2/3">
+				<GlobeRender/>
 			</div>
 			<div className="w-1/5 flex flex-col space-y-8">
 				<Bullet title="Places" text="24"/>

@@ -13,7 +13,7 @@ const SearchLayout:React.FC = () => {
 							name="name" 
 							style={{all:'unset', caretColor: 'transparent'}}
 							value={search}
-							onChange={search => setSearch('#'+search.target.value.replace(/(#|\s|[<>\-_\.`^\[\]\{\}ç¨´:,;=\(\)\/&%$·"!\+\*\?\¡\¿Ç…„–œæ€®†¥  øπå∫∂ƒ™¶§ ~Ω∑©√ß µñÑ≠”“÷¬∞¢#@\|≤s≥\\ºª‚])/g,''))}
+							onChange={search => setSearch('#'+search.target.value.replace(/(#|\s|[<>\-_\.`^\[\]\{\}ç¨´:,;=\(\)\/&%$·"!\+\*\?\¡\¿Ç…„–œæ€®†¥  øπå∫∂ƒ™¶§ ~Ω∑©√ß µñÑ≠”“÷¬∞¢#@\|≤≥\\ºª‚])/g,''))}
 						/>
 					</h1>
 				</form>

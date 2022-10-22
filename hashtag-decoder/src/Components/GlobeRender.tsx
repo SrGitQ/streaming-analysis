@@ -18,6 +18,8 @@ const WorldR: React.FC = () => {
 	return (
 		<Globe
 			ref={globeEl}
+			width={1000}
+			height={470}
 			backgroundColor='rgba(0, 0, 0, 0)'
 			globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
 			animateIn={true}
@@ -32,7 +34,7 @@ const WorldR: React.FC = () => {
 const GlobeRender: React.FC = () => {
 	
 	return (
-		<div className="flex justify-center pb-16">
+		<div className="flex justify-center">
 			<WorldR/>
 		</div>
 	);

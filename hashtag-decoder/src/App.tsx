@@ -1,20 +1,18 @@
 import React, { useRef, useState, useEffect } from "react";// , { useState, useEffect }
 // import socketIOClient from "socket.io-client";
 // const ENDPOINT = "http://127.0.0.1:5000";
-import GlobeRender from "./Components/GlobeRender";
 import GlobeLayout from "./Layouts/GlobeLayout";
-
+import SearchLayout from "./Layouts/SearchLayout";
+import GraphLayout from "./Layouts/GraphLayout";
 
 const App: React.FC = () => {
 	return (
 		<div className="h-[100vh] bg-cover bg-[url('/layers/background.png')]">
-			{/* <div className="absolute z-20 w-[100vw] h-[100vh] grid content-center">
-				<GlobeRender/>
-			</div> */}
 			<div className="absolute z-10 w-[100vw] h-[100vh] p-8">
 				<div className="h-full">
-					{/* <SearchDisplay/> */}
-					<GlobeLayout/>
+					{/* <SearchLayout/> */}
+					{/* <GlobeLayout/> */}
+					<GraphLayout/>
 				</div>
 			</div>
 		</div>
