@@ -8,9 +8,9 @@ import GlobeLayout from "./Layouts/GlobeLayout";
 const App: React.FC = () => {
 	return (
 		<div className="h-[100vh] bg-cover bg-[url('/layers/background.png')]">
-			<div className="absolute z-20 w-[100vw] h-[100vh] grid content-center">
+			{/* <div className="absolute z-20 w-[100vw] h-[100vh] grid content-center">
 				<GlobeRender/>
-			</div>
+			</div> */}
 			<div className="absolute z-10 w-[100vw] h-[100vh] p-8">
 				<div className="h-full">
 					{/* <SearchDisplay/> */}

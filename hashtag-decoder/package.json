@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@types/three": "^0.144.0",
+    "faker": "^6.6.6",
     "tailwindcss": "^3.1.8"
   }
 }
