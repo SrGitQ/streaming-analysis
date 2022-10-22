@@ -10,9 +10,10 @@ const App: React.FC = () => {
 		<div className="h-[100vh] bg-cover bg-[url('/layers/background.png')]">
 			<div className="absolute z-10 w-[100vw] h-[100vh] p-8">
 				<div className="h-full">
-					{/* <SearchLayout/> */}
-					{/* <GlobeLayout/> */}
-					<GraphLayout/>
+					<SearchLayout/>
+					{/* 
+					<GlobeLayout/>
+					<GraphLayout/> */}
 				</div>
 			</div>
 		</div>
