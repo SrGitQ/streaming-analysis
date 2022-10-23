@@ -1,7 +1,11 @@
 import Globe from 'react-globe.gl';
 import React, { useRef, useEffect } from "react";
 
-const WorldR: React.FC = () => {
+type Globe = {
+	marks: []
+}
+
+const WorldR: React.FC <Globe> = ({ marks }) => {
     const globeEl = useRef();
 
     useEffect(() => {
@@ -23,19 +27,17 @@ const WorldR: React.FC = () => {
 			backgroundColor='rgba(0, 0, 0, 0)'
 			globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
 			animateIn={true}
-			pointsData={[
-				{ lat: 21.009293505988, lng: -89.69595640433737},
-			]}
+			pointsData={marks}
 			pointColor={() => '#219bf0'}
 		/>
 	);
 };
 
-const GlobeRender: React.FC = () => {
+const GlobeRender: React.FC <Globe> = ({ marks }) => {
 	
 	return (
 		<div className="flex justify-center">
-			<WorldR/>
+			<WorldR marks={marks}/>
 		</div>
 	);
 };

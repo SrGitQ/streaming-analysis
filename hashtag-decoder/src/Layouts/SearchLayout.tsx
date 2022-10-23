@@ -1,12 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const SearchLayout:React.FC = () => {
 	const [search, setSearch] = React.useState<string>("#");
+	const navigate = useNavigate();
 
 	return (
 		<div className="flex justify-center h-full">
 			<div className="grid content-center">
-				<form>
+				<form onSubmit={() => navigate('/stream')}>
 					<h1 className="text-white text-7xl text-center">
 						<input 
 							type="text" 
