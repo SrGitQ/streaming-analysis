@@ -8,7 +8,11 @@ const SearchLayout:React.FC = () => {
 	return (
 		<div className="flex justify-center h-full">
 			<div className="grid content-center">
-				<form onSubmit={() => navigate('/stream')}>
+				<form onSubmit={() => {
+					fetch('http://localhost:5000/hashtag/'+search.replace('#', ''))
+					navigate('/stream')
+
+				}}>
 					<h1 className="text-white text-7xl text-center">
 						<input 
 							type="text" 

@@ -13,7 +13,7 @@ const GeneralInformation: React.FC <Props> = ({ data }) => {
 		<div className="h-2/3 flex ">
 			<div className="w-1/5 flex flex-col space-y-8">
 				<Bullet title="Tweets" text={`${data.tweets}`}/>
-				<Bullet title="Users" text={`${data.users}`}/>
+				<Bullet title="Users" text={`${data.no_users}`}/>
 				<Bullet title="Mentions" text={`${data.mentions}`}/>
 			</div>
 			<div className="w-2/3">
@@ -24,7 +24,7 @@ const GeneralInformation: React.FC <Props> = ({ data }) => {
 				<div className="w-18 flex flex-col m-auto">
 					<div className="text-white flex justify-between w-[4rem]">
 						<FontAwesomeIcon icon={solid('laptop')} />
-						<div>{data?.devices?.android}</div>
+						<div>{data?.devices?.web}</div>
 					</div>
 					<div className="text-white flex justify-between w-[4rem]">
 						<FontAwesomeIcon icon={solid('apple-whole')} />
@@ -32,7 +32,7 @@ const GeneralInformation: React.FC <Props> = ({ data }) => {
 					</div>
 					<div className="text-white flex justify-between w-[4rem]">
 						<FontAwesomeIcon icon={solid('mobile')} />
-						<div>{data?.devices?.web}</div>
+						<div>{data?.devices?.android}</div>
 					</div>
 				</div>
 				<Bullet title="Verified Users" text={`${data.verified}`}/>

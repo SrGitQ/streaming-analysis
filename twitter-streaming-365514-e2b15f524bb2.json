@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "twitter-streaming-365514",
+  "private_key_id": "e2b15f524bb29b2fe4a296a666b39a5c2bfea1d3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+B+3Dg8Nbh0Ji\nu5wgjnl2re5YbkpMVgcQk3k2egTbCzk2AgHb7kOMNe2GzxfaPTvBHPcPWoYpM1P5\n9DIpn2YDk+AMopye9vcggPs+twi+DDV1eAbkXcvF6Ms8D0OoZWlK22ymMslXGUuM\n2XRVZNnVpET2E/I0DWBASEZpvVOLoLpQu3jdJqpEzSP7+BpkNdZT9eRIYdpbqnl7\nS1MBQJXECRzL5nQ2iuFdKd1Ah2DFhTu9Gsx2MlciMa6pupqzk2igge3QiT465LeR\nLPa7znVDyeFq1WpI9NTlmyQlEUHI2Ok7MwHh3T1Q/fGdwoHceZJ5b5OT9u62d3+1\n5DxpiSMnAgMBAAECggEAG4mYmeGJOMVECHy5ZjpfPaR8ypHI8IDy6yMDyLIr6/YX\nZ00pKc7AORxDfGqcQULoWtawsqfikyvd+nW5ozB3HwOZzxrtaVfOfgZS4kax3KB2\nSryG+ybgdaCDewOXQVrYxEFB4F+xr4551UJZylof+waf+6zuRz68+PPASGhoJ+51\nwx8f9IyDKX0wxThIstB+zDITIVV7wxpUHBKRPqe/uw1DgCN4Mc7bxkTGEZ8VcMPV\nRDNPihh38huOSWypjh/KJKv7+Tc2RGWX6i5+Vo8teS9Lg0EAt/l80QiyuQCDHt9q\nT4p/NVAmJgTAMsSOH1QSOsUJFD54ycdU8zfG9kYhCQKBgQDfoOFQTyrtNQyq851L\nu3Nq4Ir8QLUAuGo00ZtShf2bldTIwq0B8oWALZ7T2kqqPBEOtABDmme1skvPAHkY\nJY+4mlk6PCuaYWWd2otvzdBE2FzmST7bdgkFL3d5kV0WIqi7GFeUc1+de1n0titi\nWS1Y7ldI7yMagGlKE43/SWDH1QKBgQDZigJY+ebvtir+1J/6btN3X6mR7AB93TQo\nx5cc8N7MfuItxlkAsW76IUTH1P6or4j8KeS18d5A3ZhItXD61m+BACT21D8IN4W5\nIvSlHmsypa8BC/SiebENnXX4HDO48Qe9z+tIxter6AAQN9FS5NiKxATArRaLPB4K\nOGhZKInZCwKBgQCCzvlc36ItdK1/RdcJmJFvv/6shTEbRcQiN0WSpPvuyVrZQD6w\n9+qtSoIwS+0G3PHhVtscsDHf73Y2lIFA5Z/HDMoKrW2X9Ubaah7L/GjKDIFy1v9k\noguus9BAFQ6NRyLJpfh8xmv0k1XQNcr00VMcRPZbnD49X0W3Ze7WmFZ7LQKBgHN0\n0wAkSlRJjBJKCUpiTavawuXmqvAiWg+WtvYuRSGl6ic/UXeTtIHe7GFfA3XGDF9B\nYNjMMRieQ7e7TOZkrzN5PyUdywJybW+wRMXqGhz8YKCels0w5y6Btt3jIfRzQJeW\nZZrvpgHgFUCGT3u+Z8tmc9tLQl7NnmfwPjmr0VW3AoGAPIGPg5DFajY9I4Fp7Ktk\nm6fuOk46NaSFYMOzS73pN2fRZVmNFIUqlSgoY9k8wfwC0Z84QMXY3voWTd3WmbS0\nOCIrj0FWDSKrbyJ+0A5O0DL9F66EjlCuomno6P97Sh8ZETPVjS2Sas/8xG+zLDxi\neczUyCRLqkkN4ol4pf6Tp10=\n-----END PRIVATE KEY-----\n",
+  "client_email": "tweets-streaming@twitter-streaming-365514.iam.gserviceaccount.com",
+  "client_id": "105463193604083840539",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tweets-streaming%40twitter-streaming-365514.iam.gserviceaccount.com"
+}
