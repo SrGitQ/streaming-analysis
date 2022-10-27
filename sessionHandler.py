@@ -56,16 +56,13 @@ default_data = {
 	"hash_network":{
 			"nodes": [
 				{ "id": '#Harry' },
+				{ "id": '#Potter' },
 				{ "id": '#Sally' },
-				{ "id": '#Alice' },
-				{ "id": '#Bob' },
-				{ "id": '#Charlie' },
 			],
 			"links": [
 				{ "source": '#Harry', "target": '#Sally' },
-				{ "source": '#Harry', "target": '#Alice' },
-				{ "source": '#Harry', "target": '#Bob' },
-				{ "source": '#Sally', "target": '#Alice' },
+				{ "source": '#Potter', "target": '#Sally' },
+				{ "source": '#Harry', "target": '#Potter' },
 			]
 	},
 	"hashtags": 140,
@@ -81,25 +78,21 @@ i = 0
 
 connected = False
 
+@app.route('/streamdata')
+@cross_origin()
 def incrementHandler():
 	global connected
 	global default_data
 	global trusted_hash
-	while connected:
-		time.sleep(1)
-		try:
-			if trusted_hash != '':
-				print('debbuging flag 2',trusted_hash)
-				under_condition_data = requests.get(f'https://twitter-streaming-365514-default-rtdb.firebaseio.com/{trusted_hash}.json').json()
-
-				under_condition_data = list(under_condition_data.values())[0]
-				socketio.emit('currentSession', under_condition_data)
-				default_data = under_condition_data
-				pass
-			else:
-				socketio.emit('currentSession', default_data)
-		except:
-			socketio.emit('currentSession', default_data)
+	try:
+		if trusted_hash != '':
+			print('debbuging flag 2',trusted_hash)
+			under_condition_data = requests.get(f'https://twitter-streaming-365514-default-rtdb.firebaseio.com/{trusted_hash}.json').json()
+			under_condition_data = list(under_condition_data.values())[0]
+			default_data = under_condition_data
+		return default_data
+	except:
+		return default_data
 
 @cross_origin()
 @socketio.on('connect')

@@ -28,11 +28,10 @@ const WorldR: React.FC <Globe_t> = ({ marks }) => {
 			globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
 			animateIn={true}
 			pointsData={marks?.map((mark:any) => {
-				let hey =  {
+				return {
 					lat: mark.lat,
 					lng: mark.lng,
 				}
-				return hey
 			})}
 			pointColor={() => '#219bf0'}
 		/>

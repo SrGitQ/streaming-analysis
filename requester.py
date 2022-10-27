@@ -1,6 +1,6 @@
 import functions_framework
-import requests
 import re
+import requests
 from textblob import TextBlob
 
 class Analytics:
@@ -17,13 +17,20 @@ class Analytics:
 		
 		if data:
 			self.sentiment = data['sentiment']
+			self.sentiment_avg = data['sentiment_avg']
 		else:
 			self.sentiment = {
 				"positive": 0,
 				"neutral": 0,
 				"negative": 0,
 			}
+			
 			self.sentiment[self.calculate_sentiment(tweet['tweet_text'])] += 1 
+			self.sentiment_avg = {
+				"positive": (self.sentiment['positive']) / self.no_users,
+				"neutral": (self.sentiment['neutral']) / self.no_users,
+				"negative": (self.sentiment['negative']) / self.no_users,
+			}
 
 
 		self.devices = data['devices'] if data else {'android': 0, 'ios': 0, 'web': 0}
@@ -80,9 +87,10 @@ class Analytics:
 			"verified": self.verified,
 			"raw": self.raw,
 			"sentiment": self.sentiment,
+			"sentiment_avg": self.sentiment_avg,
 			"devices": self.devices,
 			"sentiment_timeline": self.sentiment_timeline,
-			"hash_network": self.hash_network,
+			"hash_network": self.hash_network if self.hash_network else {"nodes": [], "links": []},
 			"hashtags": self.hashtags,
 			"places_locations": self.places_locations,
 		}
@@ -97,26 +105,30 @@ class Analytics:
 		self.verified += 1 if tweet['user_verified'] else 0
 		self.raw.append(tweet)
 
-		self.sentiment[self.calculate_sentiment(tweet['tweet_text'])] += 1 
-		self.sentiment = {
+		self.sentiment[self.calculate_sentiment(tweet['tweet_text'])] += 1
+		self.sentiment_avg = {
 			"positive": (self.sentiment['positive']) / self.no_users,
 			"neutral": (self.sentiment['neutral']) / self.no_users,
 			"negative": (self.sentiment['negative']) / self.no_users,
 		}
+
 		self.sentiment_timeline.append(self.sentiment)
 		self.devicesCounter(tweet['source'])
 		self.hashtags += tweet['tweet_text'].count('#')
 		self.places_locations.append({'lat':tweet['user_lat'], 'lng':tweet['user_lon']})
-		new_connections = self.get_hash_network(tweet['tweet_text'])
-		nodes = self.hash_network['nodes']
-		for node in new_connections['nodes']:
-			if node not in nodes:
-				nodes.append(node)
-		links = self.hash_network['links']
-		for link in new_connections['links']:
-			if link not in links:
-				links.append(link)
-		self.hash_network = { 'nodes': nodes, 'links': links }
+		try:
+			new_connections = self.get_hash_network(tweet['tweet_text'])
+			nodes = self.hash_network['nodes']
+			for node in new_connections['nodes']:
+				if node not in nodes:
+					nodes.append(node)
+			links = self.hash_network['links']
+			for link in new_connections['links']:
+				if link not in links:
+					links.append(link)
+			self.hash_network = { 'nodes': nodes, 'links': links }
+		except:
+			Exception("Error handlening from hash network none of type")
 
 @functions_framework.http
 def entry(request):
@@ -142,11 +154,4 @@ def entry(request):
 		current_analysis = Analytics(None, request_json)
 		requests.post('https://twitter-streaming-365514-default-rtdb.firebaseio.com/'+topic+'.json', json=current_analysis.__dict__())
 
-# 	  request_args = request.args	
-# 	  if request_json and 'name' in request_json:
-# 	      name = request_json['name']
-# 	  elif request_args and 'name' in request_args:
-# 	      name = request_args['name']
-# 	  else:
-# 	      name = 'World'
 	return 'Hello !'
